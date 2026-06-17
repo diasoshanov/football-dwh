@@ -4,23 +4,24 @@ from datetime import datetime, timedelta
 import requests
 import psycopg2
 import os
+from dotenv import load_dotenv
 
-# настройки по умолчанию
+load_dotenv()
+
 default_args = {
     'owner': 'dias',
     'retries': 1,
     'retry_delay': timedelta(minutes=5)
 }
 
-# подключение к БД
 DB_CONFIG = {
-    'host': 'host.docker.internal',  # важно! не localhost
-    'dbname': 'football_db',
-    'user': 'postgres',
-    'password': '123kolesa123'
+    'host': os.getenv("DB_HOST"),
+    'dbname': os.getenv("DB_NAME"),
+    'user': os.getenv("DB_USER"),
+    'password': os.getenv("DB_PASSWORD")
 }
 
-API_TOKEN = "8f7986d911394754b7469079eb9fbadd"
+API_TOKEN = os.getenv("API_TOKEN")
 
 def fetch_and_save():
     # получаем данные
