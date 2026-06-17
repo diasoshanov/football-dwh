@@ -1,7 +1,11 @@
 import requests
 import json
+import os
+from dotenv import load_dotenv
+load_dotenv()
 
-API_TOKEN = "8f7986d911394754b7469079eb9fbadd"
+
+API_TOKEN = os.getenv("API_TOKEN")  # токен хранится в .env файле
 
 def get_matches():
     url = "https://api.football-data.org/v4/competitions/WC/matches"  # АПЛ
