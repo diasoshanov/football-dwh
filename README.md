@@ -7,6 +7,10 @@ football-data.org API → Python → PostgreSQL → dbt → Metabase
 ↑
 Airflow
 
+## Дашборд
+
+![Dashboard](screenshots/dashboard.png)
+
 ## Стек технологий
 - **Python** — сбор данных из API
 - **PostgreSQL** — хранение данных
